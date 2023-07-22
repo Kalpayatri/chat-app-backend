@@ -2,8 +2,10 @@ const express= require('express')
 const app= express()
 const configureDB =require('./config/database')
 const router=require('./config/routes')
-const port= 3000
+const cors=require('cors')
+const port= 7000
 
+app.use(cors())
 app.use(express.json())
 configureDB()
 app.use(router)
