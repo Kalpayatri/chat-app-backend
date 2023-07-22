@@ -1,7 +1,9 @@
+require('dotenv').config();
 const mongoose= require('mongoose')
 
 const configureDB=()=>{
-    mongoose.connect('mongodb://localhost:27017/chatapp')
+    const connectionString = process.env.MONGODB_URI;
+    mongoose.connect(connectionString)
     .then(()=>{
         console.log('connected to db')
     })
