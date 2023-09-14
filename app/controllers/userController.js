@@ -49,4 +49,14 @@ userController.login = async (req, res) => {
   }
 };
 
+userController.getAllUsers = async (req, res) => {
+  try {
+    const users = await User.find({}, '_id email'); // Fetch only _id, email, and avatar fields.
+    res.status(200).json(users);
+  } catch (error) {
+    console.error('Error fetching users:', error);
+    res.status(500).json({ error: 'Failed to fetch users' });
+  }
+};
+
 module.exports = userController;
