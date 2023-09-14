@@ -1,4 +1,3 @@
-// generateSecretKey.js
 const crypto = require('crypto');
 
 function generateRandomString(length) {
