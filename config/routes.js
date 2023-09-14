@@ -4,7 +4,6 @@ const chatMessageController=require('../app/controllers/chatMessageController')
 const chatRoomController=require('../app/controllers/chatRoomController')
 const userController=require('../app/controllers/userController')
 
-// Initialize chatMessages as an empty array
 let chatMessages = [];
 
 router.post('/users/register', userController.register)
